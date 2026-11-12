@@ -1,0 +1,561 @@
+{
+  "sourceCatalogues": [
+    "Cell Culture_catalogue.pdf",
+    "Molecular biology_catalogue.pdf"
+  ],
+  "note": "Initial working list: 30 entries transcribed from visible catalogue text. Not a complete verified catalogue master. Original PDFs remain authoritative. Synonyms are matching aids, not catalogue wording. Fluo-4 AM code and pack size are not verified.",
+  "products": [
+    {
+      "id": "Molecular Biology-ML001",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML001",
+      "name": "Random Hexamer (6mer)",
+      "packSize": "7 μg",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "random hexamer",
+        "random primers",
+        "reverse transcription",
+        "cdna synthesis",
+        "rt-pcr",
+        "transcriptomics",
+        "rna-seq"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML002",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML002",
+      "name": "Random Nanomer (9mer)",
+      "packSize": "7 μg",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "random nanomer",
+        "random primers",
+        "reverse transcription",
+        "cdna synthesis"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML003",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML003",
+      "name": "Oligo dT Primer pd (T)18",
+      "packSize": "7 μg",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "oligo dt",
+        "oligo-dt",
+        "poly-a",
+        "mrna",
+        "reverse transcription",
+        "cdna synthesis"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML004",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML004",
+      "name": "RNA ExtrACT (Trizol Equivalent)",
+      "packSize": "100 ml / 200 ml",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Multiple pack sizes appear in catalogue; confirm exact code-to-pack mapping in PDF layout before quoting.",
+      "matchingKeywords": [
+        "rna extraction",
+        "rna isolation",
+        "total rna",
+        "trizol",
+        "rna purification",
+        "rna extraction reagent"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML005",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML005",
+      "name": "RNase CleAR (RNaseZAP Equivalent)",
+      "packSize": "250 ml",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction associates code and description.",
+      "matchingKeywords": [
+        "rnase contamination",
+        "rnase removal",
+        "rnase decontamination",
+        "rna work",
+        "rnasezap"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML006",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML006",
+      "name": "RNA PreSERVE (RNA Later Equivalent)",
+      "packSize": "100 ml / 500 ml",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Multiple pack sizes appear in catalogue; confirm exact code-to-pack mapping in PDF layout before quoting.",
+      "matchingKeywords": [
+        "rna stabilization",
+        "rna preservation",
+        "rna later",
+        "sample preservation",
+        "rna storage"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML007",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML007",
+      "name": "Carrier RNA (Yeast tRNA)",
+      "packSize": "10 mg / 100 mg",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Two pack sizes visible in extracted text.",
+      "matchingKeywords": [
+        "carrier rna",
+        "yeast trna",
+        "nucleic acid purification",
+        "rna extraction"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML008",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML008",
+      "name": "Glycogen, DNase Free, 20 mg/ml",
+      "packSize": "0.5 ml",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "glycogen",
+        "nucleic acid precipitation",
+        "rna precipitation",
+        "dna precipitation"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML009",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML009",
+      "name": "2× RNA Gel Loading Buffer (For Electrophoresis)",
+      "packSize": "5 × 1 ml",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "rna gel electrophoresis",
+        "rna electrophoresis",
+        "gel loading buffer",
+        "agarose gel"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML010",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML010",
+      "name": "DNA Zero",
+      "packSize": "1 EA",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "dna zero",
+        "dna decontamination",
+        "dna contamination control"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-ML011",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "ML011",
+      "name": "5× PCR Enhancer",
+      "packSize": "1 EA",
+      "category": "RNA accessory reagents",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "pcr enhancer",
+        "pcr amplification",
+        "polymerase chain reaction",
+        "pcr"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MP001",
+      "catalogue": "Molecular Biology",
+      "page": 6,
+      "code": "MP001",
+      "name": "Plasmid Isolation Kit",
+      "packSize": "50 preps",
+      "category": "DNA/RNA extraction kits",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "plasmid isolation",
+        "plasmid purification",
+        "plasmid dna",
+        "molecular cloning",
+        "bacterial cloning"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MP009",
+      "catalogue": "Molecular Biology",
+      "page": 6,
+      "code": "MP009",
+      "name": "Gel Extraction/PCR Purification Kit",
+      "packSize": "50 preps",
+      "category": "DNA/RNA extraction kits",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "gel extraction",
+        "pcr purification",
+        "dna cleanup",
+        "amplicon purification",
+        "gel electrophoresis"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MP012",
+      "catalogue": "Molecular Biology",
+      "page": 6,
+      "code": "MP012",
+      "name": "Viral RNA/DNA Extraction Kit",
+      "packSize": "50 preps",
+      "category": "DNA/RNA extraction kits",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "viral rna extraction",
+        "viral dna extraction",
+        "viral nucleic acid",
+        "virus diagnostics",
+        "viral genomics"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MP013",
+      "catalogue": "Molecular Biology",
+      "page": 6,
+      "code": "MP013",
+      "name": "Total RNA Isolation Kit (Animal Cells & Tissues, Blood, Whole Blood, Bacteria)",
+      "packSize": "50 preps",
+      "category": "DNA/RNA extraction kits",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "total rna isolation",
+        "rna extraction",
+        "animal tissue",
+        "blood rna",
+        "bacterial rna",
+        "transcriptomics"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MA001",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "MA001",
+      "name": "Taq DNA Polymerase, (5 U/μl)",
+      "packSize": "500 U / 1000 U / 5000 U",
+      "category": "Products for PCR",
+      "sourceNote": "Multiple pack sizes shown.",
+      "matchingKeywords": [
+        "taq polymerase",
+        "pcr",
+        "dna amplification",
+        "genotyping",
+        "amplicon",
+        "polymerase chain reaction"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MB001",
+      "catalogue": "Molecular Biology",
+      "page": 5,
+      "code": "MB001",
+      "name": "HotStart Taq DNA Polymerase, (5 U/μl)",
+      "packSize": "500 U / 1000 U",
+      "category": "Products for PCR",
+      "sourceNote": "Multiple pack sizes shown.",
+      "matchingKeywords": [
+        "hotstart taq",
+        "hot start pcr",
+        "pcr",
+        "dna amplification",
+        "genotyping"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MI001",
+      "catalogue": "Molecular Biology",
+      "page": 6,
+      "code": "MI001",
+      "name": "DNase I (RNase Free), Recombinant",
+      "packSize": "1000 U",
+      "category": "Nucleases",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "dnase i",
+        "dna digestion",
+        "remove dna contamination",
+        "rnase-free dnase",
+        "rna purification"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Molecular Biology-MI002",
+      "catalogue": "Molecular Biology",
+      "page": 6,
+      "code": "MI002",
+      "name": "DNase I, Bovine Pancreas native, Molecular Grade",
+      "packSize": "5000 U",
+      "category": "Nucleases",
+      "sourceNote": "Text extraction clearly associates code and description.",
+      "matchingKeywords": [
+        "dnase i",
+        "dna digestion",
+        "molecular biology nuclease"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-ME001",
+      "catalogue": "Cell Culture",
+      "page": 3,
+      "code": "ME001",
+      "name": "HotStart PCR Master Mix (2×), 50 Rxn",
+      "packSize": "1.25 ml",
+      "category": "Molecular biology reagents section as printed in the PDF text",
+      "sourceNote": "This item appears in the Cell Culture PDF extraction; category should be checked visually.",
+      "matchingKeywords": [
+        "hotstart pcr master mix",
+        "pcr",
+        "dna amplification",
+        "genotyping",
+        "polymerase chain reaction"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-ME002",
+      "catalogue": "Cell Culture",
+      "page": 3,
+      "code": "ME002",
+      "name": "Ready Go Blue HotStart PCR Master Mix (2×), 50 Rxn",
+      "packSize": "1.25 ml",
+      "category": "Molecular biology reagents section as printed in the PDF text",
+      "sourceNote": "This item appears in the Cell Culture PDF extraction; category should be checked visually.",
+      "matchingKeywords": [
+        "ready go blue hotstart pcr",
+        "pcr",
+        "dna amplification",
+        "genotyping"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-ME003",
+      "catalogue": "Cell Culture",
+      "page": 3,
+      "code": "ME003",
+      "name": "Ready Go Red HotStart PCR Master Mix (2×), 50 Rxn",
+      "packSize": "1.25 ml",
+      "category": "Molecular biology reagents section as printed in the PDF text",
+      "sourceNote": "This item appears in the Cell Culture PDF extraction; category should be checked visually.",
+      "matchingKeywords": [
+        "ready go red hotstart pcr",
+        "pcr",
+        "dna amplification",
+        "genotyping"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-FGMP001",
+      "catalogue": "Cell Culture",
+      "page": 2,
+      "code": "FGMP001",
+      "name": "FreeGrow SFM Media BHK-21",
+      "packSize": "1 L, 1 L × 10, 10 L, 20 L",
+      "category": "Serum-free powder media",
+      "sourceNote": "Product naming and pack sizes visible in extracted text.",
+      "matchingKeywords": [
+        "bhk-21",
+        "bhk21",
+        "serum-free media",
+        "cell culture",
+        "vaccine production",
+        "viral vaccine",
+        "suspension culture"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-FGMP002",
+      "catalogue": "Cell Culture",
+      "page": 2,
+      "code": "FGMP002",
+      "name": "FreeGrow SFM Media CHO",
+      "packSize": "1 L, 1 L × 10, 10 L, 20 L",
+      "category": "Serum-free powder media",
+      "sourceNote": "Product naming and pack sizes visible in extracted text.",
+      "matchingKeywords": [
+        "cho cells",
+        "cho cell culture",
+        "serum-free media",
+        "biologics production",
+        "recombinant protein",
+        "antibody production",
+        "mammalian cell culture"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-FGMP003",
+      "catalogue": "Cell Culture",
+      "page": 2,
+      "code": "FGMP003",
+      "name": "FreeGrow SFM Media HEK",
+      "packSize": "1 L, 1 L × 10, 10 L, 20 L",
+      "category": "Serum-free powder media",
+      "sourceNote": "Product naming and pack sizes visible in extracted text.",
+      "matchingKeywords": [
+        "hek cells",
+        "hek293",
+        "hek-293",
+        "serum-free media",
+        "transfection",
+        "viral vector production",
+        "mammalian cell culture"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-FGMP004",
+      "catalogue": "Cell Culture",
+      "page": 2,
+      "code": "FGMP004",
+      "name": "FreeGrow SFM Media Vero",
+      "packSize": "1 L, 1 L × 10, 10 L, 20 L",
+      "category": "Serum-free powder media",
+      "sourceNote": "Product naming and pack sizes visible in extracted text.",
+      "matchingKeywords": [
+        "vero cells",
+        "vero cell culture",
+        "serum-free media",
+        "vaccine production",
+        "viral vaccine",
+        "mammalian cell culture"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-FGML004",
+      "catalogue": "Cell Culture",
+      "page": 3,
+      "code": "FGML004",
+      "name": "FreeGrow SFM Media Vero",
+      "packSize": "1000 ml",
+      "category": "Serum-free liquid media",
+      "sourceNote": "Product naming and pack size visible in extracted text.",
+      "matchingKeywords": [
+        "vero cells",
+        "vero cell culture",
+        "serum-free media",
+        "vaccine production",
+        "viral vaccine",
+        "mammalian cell culture"
+      ],
+      "verification": "Transcribed into initial working list; verify against the original PDF before quoting or purchasing."
+    },
+    {
+      "id": "Cell Culture-CCSI013",
+      "catalogue": "Cell Culture",
+      "page": 20,
+      "code": "CCSI013",
+      "name": "DAPI dihydrochloride",
+      "packSize": "10 mg",
+      "category": "Stains & Indicators",
+      "sourceNote": "Exact name, code, and pack size visible in PDF text on page 20.",
+      "matchingKeywords": [
+        "dapi",
+        "nuclear stain",
+        "nuclear staining",
+        "fluorescence microscopy",
+        "fluorescent microscopy",
+        "high-resolution microscopy",
+        "cell imaging",
+        "nuclei imaging",
+        "super-resolution microscopy",
+        "microscopy staining"
+      ],
+      "verification": "Name, code and pack size visible in extracted PDF text; verify original PDF before quoting."
+    },
+    {
+      "id": "Cell Culture-CCSI029",
+      "catalogue": "Cell Culture",
+      "page": 20,
+      "code": "CCSI029",
+      "name": "Propidium iodide",
+      "packSize": "25 mg",
+      "category": "Stains & Indicators",
+      "sourceNote": "Exact name, code, and pack size visible in PDF text on page 20.",
+      "matchingKeywords": [
+        "propidium iodide",
+        "cell viability",
+        "dead cell staining",
+        "cell death assay",
+        "flow cytometry",
+        "fluorescent cell analysis"
+      ],
+      "verification": "Name, code and pack size visible in extracted PDF text; verify original PDF before quoting."
+    },
+    {
+      "id": "Cell Culture-Fluo-4-AM",
+      "catalogue": "Cell Culture",
+      "page": 20,
+      "code": "Not visible in extracted table",
+      "name": "Fluo-4 AM",
+      "packSize": "Not visible in extracted table",
+      "category": "Stains & Indicators (shown in page graphic)",
+      "sourceNote": "Product name appears in the stains-and-indicators graphic on PDF page 20, but its catalogue code and pack size were not visible in extracted table text.",
+      "matchingKeywords": [
+        "fluo-4 am",
+        "calcium imaging",
+        "calcium signalling",
+        "calcium signaling",
+        "intracellular calcium",
+        "calcium indicator",
+        "neuronal activity imaging",
+        "live-cell imaging"
+      ],
+      "verification": "Name visible in page graphic; code and pack size unverified. Candidate only."
+    }
+  ]
+}

@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Industry | BD Prospect Tracker</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1e293b;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    header h1 { margin-bottom: 6px; font-size: 23px; }
+    header p { margin-bottom: 0; color: #64748b; }
+
+    main {
+      max-width: 1150px;
+      margin: 32px auto;
+      padding: 0 24px;
+    }
+
+    button, input, select, textarea { font: inherit; }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 11px 16px;
+      cursor: pointer;
+    }
+
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: 2px;
+    }
+
+    .primary { background: #1d4ed8; color: white; }
+    .secondary { background: #e2e8f0; color: #1e293b; }
+    .danger { background: #fee2e2; color: #991b1b; }
+
+    .toolbar {
+      display: flex;
+      gap: 12px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: white;
+      color: #1e293b;
+    }
+
+    .toolbar input { flex: 1; min-width: 220px; }
+    .toolbar select { width: auto; min-width: 170px; }
+
+    .directory {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+      gap: 16px;
+    }
+
+    .prospect-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      min-height: 155px;
+      padding: 22px 12px;
+      text-align: center;
+      cursor: pointer;
+      overflow-wrap: anywhere;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .prospect-card:hover {
+      border-color: #93b4f5;
+      box-shadow: 0 5px 18px #0f172a0d;
+    }
+
+    .prospect-icon { font-size: 36px; margin-bottom: 12px; }
+    .prospect-name { font-weight: 600; line-height: 1.4; }
+
+    .matched-count {
+      margin-top: 10px;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    .muted { color: #64748b; }
+    .empty { padding: 45px 20px; text-align: center; color: #64748b; }
+
+    .panel {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 24px;
+      margin-top: 22px;
+    }
+
+    .panel-heading {
+      padding-bottom: 12px;
+      margin-top: 28px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 17px;
+    }
+
+    .panel-heading:first-child { margin-top: 0; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field { min-width: 0; }
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    textarea { min-height: 95px; resize: vertical; }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .detail-item {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .detail-item.full { grid-column: 1 / -1; }
+    .detail-label { font-size: 12px; color: #64748b; margin-bottom: 6px; }
+    .detail-value { white-space: pre-wrap; line-height: 1.55; }
+    .blank-value { color: #94a3b8; font-style: italic; }
+
+    .status {
+      display: inline-block;
+      background: #eff6ff;
+      color: #1d4ed8;
+      border-radius: 6px;
+      padding: 5px 8px;
+      font-size: 12px;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 650px) {
+      header { padding: 18px; }
+      main { padding: 0 16px; margin: 22px auto; }
+      .panel { padding: 17px; }
+      .form-grid, .detail-grid { grid-template-columns: 1fr; }
+      .field.full, .detail-item.full { grid-column: auto; }
+      .toolbar select { flex: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>🏢 Industry</h1>
+      <p>Industry prospect directory</p>
+    </div>
+    <button class="secondary" onclick="goHome()">← Home</button>
+  </header>
+
+  <main>
+    <section id="directoryView">
+      <h2>Company Directory</h2>
+      <p class="muted">Select a company to open its complete profile.</p>
+
+      <div class="toolbar">
+        <input
+          id="search"
+          type="search"
+          placeholder="Search companies or business areas..."
+          oninput="renderDirectory()"
+        >
+
+        <select id="statusFilter" onchange="renderDirectory()">
+          <option value="">All BD statuses</option>
+          <option value="Researching">Researching</option>
+          <option value="Shortlisted">Shortlisted</option>
+          <option value="Ready to Contact">Ready to Contact</option>
+          <option value="Contacted">Contacted</option>
+          <option value="Response Received">Response Received</option>
+          <option value="In Discussion">In Discussion</option>
+          <option value="On Hold">On Hold</option>
+          <option value="Not a Fit">Not a Fit</option>
+        </select>
+
+        <button class="primary" onclick="newProspect()">+ Add Company</button>
+      </div>
+
+      <div id="directory" class="directory"></div>
+    </section>
+
+    <section id="profileView" hidden>
+      <div class="toolbar">
+        <button class="secondary" onclick="showDirectory()">← Directory</button>
+      </div>
+      <div id="profileContent"></div>
+    </section>
+
+    <section id="formView" hidden>
+      <div class="toolbar">
+        <button class="secondary" onclick="cancelForm()">← Back</button>
+      </div>
+
+      <h2 id="formTitle">Add Industry Company</h2>
+      <p class="muted">
+        Enter the information available to you. Unknown details can be left blank
+        and updated later.
+      </p>
+
+      <form id="prospectForm">
+        <div id="formFields" class="panel"></div>
+
+        <div class="actions">
+          <button class="primary" type="submit">Save Company</button>
+          <button class="secondary" type="button" onclick="cancelForm()">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "bdProspects_v1";
+    const CATEGORY = "Industry";
+
+    // Catalogue matching is reserved for a later stage.
+    // No products are automatically matched in this version.
+    const fields = [
+      {
+        section: "Company Details",
+        items: [
+          ["name", "Company / Organisation Name", "text", true],
+          ["businessArea", "Business Area / Industry Sector", "text"],
+          ["website", "Official Website URL", "url"],
+          ["country", "Country", "text"],
+          ["state", "State / Region", "text"],
+          ["city", "City", "text"],
+          ["address", "Postal Address / Headquarters", "textarea"],
+          ["companySize", "Company Size / Employee Range", "text"],
+          ["organisationType", "Organisation Type", "text"],
+          ["generalDescription", "Company Overview", "textarea"]
+        ]
+      },
+      {
+        section: "Business Activities and Capabilities",
+        items: [
+          ["businessActivities", "Main Business Activities", "textarea"],
+          ["productsServices", "Products and Services Offered", "textarea"],
+          ["technologies", "Technologies / Technical Capabilities", "textarea"],
+          ["manufacturing", "Manufacturing / Production Capabilities", "textarea"],
+          ["facilities", "Facilities / Equipment / Infrastructure", "textarea"],
+          ["applications", "Applications / Markets Served", "textarea"],
+          ["businessKeywords", "Business and Technology Keywords", "textarea"],
+          ["projects", "Known Projects / Partnerships / Collaborations", "textarea"]
+        ]
+      },
+      {
+        section: "Contacts",
+        items: [
+          ["contactName", "Primary Contact Name", "text"],
+          ["contactRole", "Job Title / Role", "text"],
+          ["contactDepartment", "Department / Business Unit", "text"],
+          ["contactEmail", "Email Address", "email"],
+          ["contactPhone", "Phone Number", "tel"],
+          ["contactProfile", "Contact Profile / LinkedIn URL", "url"],
+          ["otherContacts", "Other Contacts and Their Details", "textarea"]
+        ]
+      },
+      {
+        section: "Sources and Evidence",
+        items: [
+          ["sourceUrls", "Source URLs / References", "textarea"],
+          ["evidenceNotes", "Evidence, Findings and Verification Notes", "textarea"],
+          ["lastVerified", "Date Information Was Last Verified", "date"]
+        ]
+      },
+      {
+        section: "Business Development Tracking",
+        items: [
+          ["researchStatus", "Research / Profile Status", "select", false, [
+            "Queued", "Researching", "Awaiting Review",
+            "Approved", "Needs Correction", "Failed"
+          ]],
+          ["bdStatus", "BD Status", "select", false, [
+            "Researching", "Shortlisted", "Ready to Contact",
+            "Contacted", "Response Received", "In Discussion",
+            "On Hold", "Not a Fit"
+          ]],
+          ["priority", "Priority (Optional)", "select", false, [
+            "Not Set", "Low", "Medium", "High"
+          ]],
+          ["lastInteraction", "Last Interaction Date", "date"],
+          ["interactionHistory", "Interaction History / Meeting Notes", "textarea"],
+          ["nextFollowUp", "Next Follow-up Date", "date"],
+          ["followUpNotes", "Follow-up Notes / Next Action", "textarea"],
+          ["generalNotes", "Additional Notes", "textarea"]
+        ]
+      },
+      {
+        section: "Catalogue Matching — Later Stage",
+        items: [
+          ["catalogueMatch", "Product / Service Catalogue Match", "textarea"]
+        ]
+      }
+    ];
+
+    let allRecords = loadAllRecords();
+    let prospects = allRecords.filter(p => p.category === CATEGORY);
+    let activeId = null;
+    let editingId = null;
+
+    function loadAllRecords() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+        return Array.isArray(saved) ? saved : [];
+      } catch (error) {
+        alert("Saved records could not be read from this browser.");
+        return [];
+      }
+    }
+
+    // Save Industry records without deleting Academic Labs records.
+    function persistProspects() {
+      try {
+        const otherRecords = allRecords.filter(p => p.category !== CATEGORY);
+        const updatedRecords = [...otherRecords, ...prospects];
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedRecords));
+        allRecords = updatedRecords;
+        return true;
+      } catch (error) {
+        alert(
+          "The browser could not save your data. Storage may be full or unavailable. " +
+          "Please export important profiles as a backup."
+        );
+        return false;
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function showOnly(viewId) {
+      ["directoryView", "profileView", "formView"].forEach(id => {
+        document.getElementById(id).hidden = id !== viewId;
+      });
+    }
+
+    function showDirectory() {
+      activeId = null;
+      showOnly("directoryView");
+      renderDirectory();
+    }
+
+    function getMatchedCount(company) {
+      const count = company.matchedProductsCount;
+
+      return count !== undefined && count !== null && count !== ""
+        ? escapeHtml(count)
+        : "—";
+    }
+
+    function renderDirectory() {
+      const query = document.getElementById("search").value.trim().toLowerCase();
+      const selectedStatus = document.getElementById("statusFilter").value;
+
+      const filtered = prospects.filter(p => {
+        const searchableText = [
+          p.name,
+          p.businessArea,
+          p.generalDescription,
+          p.businessActivities,
+          p.technologies
+        ].join(" ").toLowerCase();
+
+        const matchesSearch = searchableText.includes(query);
+        const matchesStatus = !selectedStatus || (p.bdStatus || "Researching") === selectedStatus;
+
+        return matchesSearch && matchesStatus;
+      });
+
+      const container = document.getElementById("directory");
+
+      if (!filtered.length) {
+        const hasCompanies = prospects.length > 0;
+
+        container.innerHTML = `
+          <div class="empty" style="grid-column:1/-1">
+            <div style="font-size:42px;margin-bottom:12px">🏢</div>
+            <strong>${hasCompanies ? "No matching companies found" : "No companies added yet"}</strong>
+            <p>${
+              hasCompanies
+                ? "Try another search or change the status filter."
+                : "Select “Add Company” to create your first prospect."
+            }</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(p => `
+        <div
+          class="prospect-card"
+          role="button"
+          tabindex="0"
+          onclick="openProfile('${p.id}')"
+          onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProfile('${p.id}')}"
+        >
+          <div class="prospect-icon">🏢</div>
+          <div class="prospect-name">${escapeHtml(p.name || "Unnamed Company")}</div>
+          <div class="matched-count">Matched products: ${getMatchedCount(p)}</div>
+        </div>
+      `).join("");
+    }
+
+    function newProspect() {
+      editingId = null;
+      document.getElementById("formTitle").textContent = "Add Industry Company";
+      buildForm({});
+      showOnly("formView");
+    }
+
+    function editProspect(id) {
+      const prospect = prospects.find(p => p.id === id);
+      if (!prospect) return;
+
+      editingId = id;
+      document.getElementById("formTitle").textContent = "Edit Industry Company";
+      buildForm(prospect);
+      showOnly("formView");
+    }
+
+    function buildForm(prospect) {
+      let html = "";
+
+      for (const group of fields) {
+        html += `
+          <h3 class="panel-heading">${escapeHtml(group.section)}</h3>
+          <div class="form-grid">
+        `;
+
+        for (const [key, label, type, required, options] of group.items) {
+          const value = key === "catalogueMatch" ? "" : (prospect[key] || "");
+
+          const full = type === "textarea" ||
+            [
+              "generalDescription",
+              "businessActivities",
+              "productsServices",
+              "technologies",
+              "manufacturing",
+              "facilities",
+              "applications",
+              "businessKeywords",
+              "projects",
+              "sourceUrls",
+              "evidenceNotes",
+              "otherContacts",
+              "interactionHistory",
+              "followUpNotes",
+              "generalNotes",
+              "catalogueMatch"
+            ].includes(key);
+
+          html += `
+            <div class="field ${full ? "full" : ""}">
+              <label for="${key}">
+                ${escapeHtml(label)}${required ? " *" : ""}
+              </label>
+          `;
+
+          if (type === "textarea") {
+            html += `
+              <textarea
+                id="${key}"
+                name="${key}"
+                ${key === "catalogueMatch"
+                  ? "readonly placeholder='Reserved for the matching stage'"
+                  : ""}
+              >${escapeHtml(value)}</textarea>
+            `;
+          } else if (type === "select") {
+            html += `<select id="${key}" name="${key}">`;
+
+            for (const option of options) {
+              const defaultOption =
+                key === "researchStatus" ? "Queued" :
+                key === "bdStatus" ? "Researching" : "Not Set";
+
+              const selected = value ? value === option : option === defaultOption;
+
+              html += `
+                <option value="${escapeHtml(option)}" ${selected ? "selected" : ""}>
+                  ${escapeHtml(option)}
+                </option>
+              `;
+            }
+
+            html += `</select>`;
+          } else {
+            html += `
+              <input
+                id="${key}"
+                name="${key}"
+                type="${type}"
+                value="${escapeHtml(value)}"
+                ${required ? "required" : ""}
+              >
+            `;
+          }
+
+          html += `</div>`;
+        }
+
+        html += `</div>`;
+      }
+
+      document.getElementById("formFields").innerHTML = html;
+    }
+
+    function cancelForm() {
+      if (activeId) openProfile(activeId);
+      else showDirectory();
+    }
+
+    document.getElementById("prospectForm").addEventListener("submit", event => {
+      event.preventDefault();
+
+      const formData = new FormData(event.currentTarget);
+      const record = {};
+
+      for (const group of fields) {
+        for (const [key] of group.items) {
+          record[key] = key === "catalogueMatch"
+            ? ""
+            : String(formData.get(key) || "").trim();
+        }
+      }
+
+      record.category = CATEGORY;
+      record.id = editingId || (
+        typeof crypto !== "undefined" && crypto.randomUUID
+          ? crypto.randomUUID()
+          : String(Date.now()) + Math.random().toString(16).slice(2)
+      );
+
+      record.updatedAt = new Date().toISOString();
+
+      if (editingId) {
+        const index = prospects.findIndex(p => p.id === editingId);
+
+        if (index >= 0) {
+          // Keep any matching count already stored for this company.
+          prospects[index] = {
+            ...prospects[index],
+            ...record,
+            matchedProductsCount: prospects[index].matchedProductsCount
+          };
+        }
+      } else {
+        record.createdAt = record.updatedAt;
+        prospects.push(record);
+      }
+
+      if (!persistProspects()) {
+        // Reload records if saving failed so the page does not retain
+        // an unsaved change in memory.
+        prospects = loadAllRecords().filter(p => p.category === CATEGORY);
+        return;
+      }
+
+      activeId = record.id;
+      openProfile(record.id);
+    });
+
+    function openProfile(id) {
+      const p = prospects.find(item => item.id === id);
+      if (!p) return;
+
+      activeId = id;
+      showOnly("profileView");
+
+      let html = `
+        <div class="panel">
+          <div class="prospect-icon">🏢</div>
+          <h2>${escapeHtml(p.name || "Unnamed Company")}</h2>
+          <p class="muted">${escapeHtml(p.businessArea || "Business area not specified")}</p>
+          <p class="muted">Matched products: ${getMatchedCount(p)}</p>
+          <span class="status">${escapeHtml(p.bdStatus || "Researching")}</span>
+
+          <div class="actions">
+            <button class="primary" onclick="editProspect('${p.id}')">Edit Profile</button>
+            <button class="secondary" onclick="exportProspect('${p.id}')">Export This Profile</button>
+            <button class="danger" onclick="deleteProspect('${p.id}')">Delete Company</button>
+          </div>
+        </div>
+      `;
+
+      for (const group of fields) {
+        html += `
+          <div class="panel">
+            <h3 class="panel-heading">${escapeHtml(group.section)}</h3>
+            <div class="detail-grid">
+        `;
+
+        for (const [key, label] of group.items) {
+          const value = key === "catalogueMatch" ? "" : (p[key] || "");
+
+          const isLink = ["website", "contactProfile"].includes(key) &&
+            /^https?:\/\/\S+$/i.test(value);
+
+          html += `
+            <div class="detail-item ${
+              value.length > 100 || value.includes("\n") ? "full" : ""
+            }">
+              <div class="detail-label">${escapeHtml(label)}</div>
+              <div class="detail-value ${value ? "" : "blank-value"}">
+          `;
+
+          if (key === "catalogueMatch") {
+            html += "Reserved for later — not assessed";
+          } else if (isLink) {
+            html += `
+              <a href="${escapeHtml(value)}" target="_blank" rel="noopener noreferrer">
+                ${escapeHtml(value)}
+              </a>
+            `;
+          } else {
+            html += value ? escapeHtml(value) : "Not entered";
+          }
+
+          html += `</div></div>`;
+        }
+
+        html += `</div></div>`;
+      }
+
+      document.getElementById("profileContent").innerHTML = html;
+    }
+
+    function deleteProspect(id) {
+      if (!confirm(
+        "Delete this company permanently from this browser's saved records?"
+      )) return;
+
+      const previous = prospects;
+      prospects = prospects.filter(p => p.id !== id);
+
+      if (!persistProspects()) {
+        prospects = previous;
+        return;
+      }
+
+      showDirectory();
+    }
+
+    function exportProspect(id) {
+      const p = prospects.find(item => item.id === id);
+      if (!p) return;
+
+      const blob = new Blob(
+        [JSON.stringify(p, null, 2)],
+        { type: "application/json" }
+      );
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download = (p.name || "industry-company")
+        .replace(/[^a-z0-9_-]/gi, "_") + ".json";
+
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    renderDirectory();
+  </script>
+</body>
+</html>
